@@ -9,7 +9,7 @@ export default function(code) {
     })
     .then(function(text){
       console.log(text);
-      let json = JSON.parse(text.replace("//",''))[0];
+      //let json = JSON.parse(text.replace("//",''))[0];
       return {
         WeatherMain: json.main,
         WeatherDescription: json.description

@@ -8,9 +8,9 @@ class theweather extends Component {
     super(props);
     this.changeIndex = this.changeIndex.bind(this);
     this.state = {
-      WeatherName: 'N/A',
-      WeatherMain: 'N/A',
-      WeatherDescription: 'N/A',
+      WeatherName: 'City: N/A',
+      WeatherMain: 'Weather: N/A',
+      WeatherDescription: 'Description: N/A',
     };
     this.changeIndex('Bangkok', '1608132');
   }

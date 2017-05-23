@@ -8,7 +8,7 @@ class theweather extends Component {
     super(props);
     this.changeIndex = this.changeIndex.bind(this);
     this.state = {
-      WeatherName: 'Bangkok',
+      WeatherName: 'N/A',
       WeatherMain: 'N/A',
       WeatherDescription: 'N/A',
     };
@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   WeatherName: {
-    fontSize: 30
+    fontSize: 25
   },
   WeatherMain: {
-    fontSize: 80
+    fontSize: 60
   },
   WeatherDescription: {
-    fontSize: 40
+    fontSize: 30
   },
   button: {
     margin: 10,

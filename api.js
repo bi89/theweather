@@ -5,11 +5,10 @@ export default function(code) {
 
   return fetch(url)
     .then(function(response){
-      return response.text();
+      return response.json()
     })
-    .then(function(text){
-      console.log(text);
-      //let json = JSON.parse(text.replace("//",''))[0];
+    .then(function(json){
+      console.log(json);
       return {
         WeatherMain: json.main,
         WeatherDescription: json.description

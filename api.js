@@ -11,7 +11,8 @@ export default function(code) {
       console.log(json);
       return {
         WeatherMain: json.weather[0].main,
-        WeatherName: json.name
+        WeatherName: json.name,
+        WeatherDescription: json.weather[0].description
       };
     });
 }

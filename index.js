@@ -10,8 +10,9 @@ class theweather extends Component {
     this.state = {
       WeatherName: 'City',
       WeatherMain: 'Weather',
+      WeatherDescription: 'Description'
     };
-    this.changeIndex('Singapore', '1880252');
+    this.changeIndex('Null', 'Null', 'Null');
   }
 
   changeIndex(code){
@@ -31,6 +32,9 @@ class theweather extends Component {
           <Text style={styles.WeatherMain}>
             {this.state.WeatherMain}
           </Text>
+          <Text style={styles.WeatherDescription}>
+            {this.state.WeatherDescription}
+          </Text>
         </View>
 
         <View style={styles.footer}>
@@ -40,6 +44,9 @@ class theweather extends Component {
           <StockButton name="Singapore" code="1880252" onPress={()=>this.changeIndex("1880252")}/>
           <StockButton name="New York" code="5128581" onPress={()=>this.changeIndex("5128581")}/>
           <StockButton name="Osaka" code="1853908" onPress={()=>this.changeIndex("1853908")}/>
+          <StockButton name="Lop Buri" code="1609032" onPress={()=>this.changeIndex("1609032")}/>
+          <StockButton name="San Francisco" code="5391959" onPress={()=>this.changeIndex("5391959")}/>
+          <StockButton name="Canberra" code="2172517" onPress={()=>this.changeIndex("2172517")}/>
         </View>
       </View>
     );
@@ -63,20 +70,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   WeatherName: {
-    fontSize: 25
+    fontSize: 30,
+    color: 'green'
+  },
+  WeatherDescription: {
+    fontSize: 40,
+    color: 'darkgreen'
   },
   WeatherMain: {
-    fontSize: 60
-  },
-  button: {
-    margin: 10,
-    borderWidth: 1,
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'lightgray'
+    fontSize: 70,
+    color: 'lightblue'
   }
 });
 

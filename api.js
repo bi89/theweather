@@ -1,7 +1,7 @@
-var rootUrl = 'http://samples.openweathermap.org/data/2.5/weather?&appid=b1b15e88fa797225412429c1c50c122a1';
-
+var rootUrl = 'http://api.openweathermap.org/data/2.5/weather?appid=ec29f6abe91e76bfead8ca5b932245a3';
 export default function(code) {
-  var url = `${rootUrl}?id=${code}`;
+  var url = `${rootUrl}&id=${code}`;
+  console.log(url);
 
   return fetch(url)
     .then(function(response){
@@ -10,8 +10,8 @@ export default function(code) {
     .then(function(json){
       console.log(json);
       return {
-        WeatherMain: json.main,
-        WeatherDescription: json.description
+        WeatherMain: json.weather[0].main,
+        WeatherName: json.name
       };
     });
 }

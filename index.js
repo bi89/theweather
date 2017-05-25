@@ -8,16 +8,16 @@ class theweather extends Component {
     super(props);
     this.changeIndex = this.changeIndex.bind(this);
     this.state = {
-      WeatherName: 'City: N/A',
-      WeatherMain: 'Weather: N/A',
-      WeatherDescription: 'Description: N/A',
+      WeatherName: 'City',
+      WeatherMain: 'Weather',
     };
-    this.changeIndex('Bangkok', '1608132');
+    this.changeIndex('Null', 'Null');
   }
 
-  changeIndex(WeatherName, WeatherMain){
-    API(WeatherMain).then((data)=>{
-      this.setState({...data, WeatherName, WeatherMain});
+  changeIndex(code){
+    API(code).then((data)=>{
+      console.log(data);
+      this.setState({...data});
     });
   }
 
@@ -31,18 +31,15 @@ class theweather extends Component {
           <Text style={styles.WeatherMain}>
             {this.state.WeatherMain}
           </Text>
-          <Text style={styles.WeatherDescription}>
-            {this.state.WeatherDescription}
-          </Text>
         </View>
 
         <View style={styles.footer}>
-          <StockButton name="Bangkok" code="1608132" onPress={this.changeIndex}/>
-          <StockButton name="Tokyo" code="1850147" onPress={this.changeIndex}/>
-          <StockButton name="Saint Petersburg" code="519690" onPress={this.changeIndex}/>
-          <StockButton name="Singapore" code="1880252" onPress={this.changeIndex}/>
-          <StockButton name="New York" code="5128581" onPress={this.changeIndex}/>
-          <StockButton name="Osaka" code="1853908" onPress={this.changeIndex}/>
+          <StockButton name="Bangkok" code="1609350" onPress={()=>this.changeIndex("1609350")}/>
+          <StockButton name="Tokyo" code="1850147" onPress={()=>this.changeIndex("1850147")}/>
+          <StockButton name="Saint Petersburg" code="519690" onPress={()=>this.changeIndex("519690")}/>
+          <StockButton name="Singapore" code="1880252" onPress={()=>this.changeIndex("1880252")}/>
+          <StockButton name="New York" code="5128581" onPress={()=>this.changeIndex("5128581")}/>
+          <StockButton name="Osaka" code="1853908" onPress={()=>this.changeIndex("1853908")}/>
         </View>
       </View>
     );
@@ -70,9 +67,6 @@ const styles = StyleSheet.create({
   },
   WeatherMain: {
     fontSize: 60
-  },
-  WeatherDescription: {
-    fontSize: 30
   },
   button: {
     margin: 10,

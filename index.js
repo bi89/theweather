@@ -11,7 +11,7 @@ class theweather extends Component {
       WeatherName: 'City',
       WeatherMain: 'Weather',
     };
-    this.changeIndex('Null', 'Null');
+    this.changeIndex('Singapore', '1880252');
   }
 
   changeIndex(code){
@@ -36,7 +36,7 @@ class theweather extends Component {
         <View style={styles.footer}>
           <StockButton name="Bangkok" code="1609350" onPress={()=>this.changeIndex("1609350")}/>
           <StockButton name="Tokyo" code="1850147" onPress={()=>this.changeIndex("1850147")}/>
-          <StockButton name="Saint Petersburg" code="519690" onPress={()=>this.changeIndex("519690")}/>
+          <StockButton name="East London" code="1006984" onPress={()=>this.changeIndex("1006984")}/>
           <StockButton name="Singapore" code="1880252" onPress={()=>this.changeIndex("1880252")}/>
           <StockButton name="New York" code="5128581" onPress={()=>this.changeIndex("5128581")}/>
           <StockButton name="Osaka" code="1853908" onPress={()=>this.changeIndex("1853908")}/>
